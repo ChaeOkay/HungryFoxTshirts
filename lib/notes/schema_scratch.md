@@ -27,11 +27,14 @@ a user can checkout
 __________________________________
 
 todo:
+1) set up temp root page
+  research - sass
+  research - cucumber
+
+research - mongodb
 reserach - do tshirts have tax?
-research cucumber
 research forms of payment - is paypal preferred?
 research - calculating sales tax
-research - mongodb
 
 _____________________________________
 
