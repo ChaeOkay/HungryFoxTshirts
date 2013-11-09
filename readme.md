@@ -1,4 +1,4 @@
-#HungryFoxTshirts
+#HungryWolfTshirts
 
 Selling vintage Duran Duran T-shirts!
 
