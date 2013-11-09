@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Fox::Application.load_tasks
+Wolf::Application.load_tasks
