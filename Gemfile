@@ -11,8 +11,11 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
-group :test do
+group :test, :development do
+  gem 'rspec-rails'
   gem 'cucumber-rails', require: false
+  gem 'spork-rails'
+  gem 'database_cleaner'
 end
 
 group :doc do
