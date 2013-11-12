@@ -10,10 +10,11 @@ gem 'jbuilder', '~> 1.2'
 gem 'mongoid', git: 'git://github.com/mongoid/mongoid.git'
 gem 'bson_ext'
 
-group :test do
+group :test, :development do
   gem 'rspec-rails'
   gem 'cucumber-rails', :require => false
   gem 'database_cleaner'
+  gem 'capybara'
 end
 
 group :doc do
