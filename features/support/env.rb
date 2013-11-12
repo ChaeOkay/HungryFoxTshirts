@@ -1,6 +1,8 @@
 require 'cucumber/rails'
 require 'capybara/cucumber'
 
+Capybara.default_driver = :selenium
+
 ActionController::Base.allow_rescue = false
 
 begin

@@ -15,6 +15,7 @@ group :test, :development do
   gem 'cucumber-rails', :require => false
   gem 'database_cleaner'
   gem 'capybara'
+  gem 'selenium-webdriver'
 end
 
 group :doc do
