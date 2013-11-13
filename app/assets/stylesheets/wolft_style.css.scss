@@ -1,0 +1,87 @@
+@import url(http://fonts.googleapis.com/css?family=Montserrat+Subrayada:400,700|Roboto:400,300,100,500,700,900);
+
+$brand: 'Montserrat Subrayada', sans-serif;
+$body: 'Roboto', sans-serif;
+
+$gray: #e2dbc8;
+
+body {
+  background-color: #fbf4e1;
+  font-family: $body;
+  font-weight: 400;
+}
+
+ul {
+  list-style-type: none
+}
+
+#brand {
+  font-family: $brand;
+  font-size: 3.5em;
+  width: 5em;
+}
+
+.heading {
+  background-color:  #f3cc4b;
+}
+
+.line {
+  border-top: 1px solid $gray;
+  height: 0.5em;
+}
+
+
+.feature{
+  width: 35em;
+  margin-left: auto;
+  margin-right: auto;
+
+  .front {
+    width: 15em;
+    float: left;
+  }
+
+  .back {
+    width: 5em;
+    margin: 1em 0 0 0;
+    float: left;
+  }
+
+  h4 {
+    margin: 0;
+    padding: 0;
+  }
+
+  .tag {
+    width: 12em;
+    float: right;
+    margin: 5em 0 0 0;
+    top: 50%;
+    bottom: 50%;
+  }
+
+  .text {
+    font-weight: 100;
+    font-size: 0.8em;
+    padding: 4.5em 2.5em 3em 3.4em;
+  }
+
+}
+
+.circleBase {
+    -webkit-border-radius: 999px;
+    -moz-border-radius: 999px;
+    border-radius: 999px;
+    behavior: url(PIE.htc);
+}
+
+.type1 {
+    width: 15em;
+    height: 15em;
+    border: 1px solid $gray;
+}
+
+
+//yellow #f3cc4b
+//blue #506fa5
+//light gray #e2dbc8
