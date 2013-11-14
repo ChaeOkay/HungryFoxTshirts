@@ -1,4 +1,4 @@
-class Size
+class Tsize
   include Mongoid::Document
 
   field :name, type: String
