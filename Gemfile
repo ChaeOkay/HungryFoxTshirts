@@ -13,11 +13,11 @@ gem 'zurb-foundation'
 
 group :test, :development do
   gem 'rspec-rails'
+  gem 'mongoid-rspec'
   gem 'cucumber-rails', :require => false
   gem 'database_cleaner'
   gem 'capybara'
   gem 'selenium-webdriver'
-  gem 'mongoid-rspec'
 end
 
 group :doc do
