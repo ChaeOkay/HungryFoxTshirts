@@ -8,4 +8,5 @@ class Tshirt
   has_many :tsizes
 
   validates_presence_of :name, :description, :cost
+  validates_uniqueness_of :name
 end
