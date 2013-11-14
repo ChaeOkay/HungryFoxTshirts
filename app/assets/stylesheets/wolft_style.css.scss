@@ -37,6 +37,22 @@ ul {
   width: 35em;
   margin-top: 4em;
 
+  h4 {
+    margin: 0;
+    padding: 0;
+  }
+
+  b {
+    color: $darkgray;
+    font-size: 1.5em;
+    padding: 0 0.5em 0 0;
+  }
+
+  .about {
+    font-size: 0.8em;
+    padding: 0 0 1.5em 0;
+  }
+
   .front {
     width: 15em;
     float: left;
@@ -46,11 +62,6 @@ ul {
     width: 5em;
     margin: 1em 0 0 0;
     float: left;
-  }
-
-  h4 {
-    margin: 0;
-    padding: 0;
   }
 
   .tag {
@@ -74,7 +85,6 @@ ul {
     -webkit-border-radius: 999px;
     -moz-border-radius: 999px;
     border-radius: 999px;
-    behavior: url(PIE.htc);
 }
 
 .type1 {
@@ -106,3 +116,4 @@ ul {
   background-color:  $gray;
   color: $darkgray;
 }
+
