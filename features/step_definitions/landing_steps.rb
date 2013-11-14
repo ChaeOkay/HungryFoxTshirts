@@ -12,6 +12,6 @@ When /^I click on "(.*?)"$/ do |link|
   click_on link
 end
 
-When /^I am redirected to the "(.*?)" page$/ do |page|
+When /^I am redirected to "(.*?)"$/ do |page|
   pending
 end

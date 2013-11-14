@@ -1,9 +1,9 @@
 @import url(http://fonts.googleapis.com/css?family=Montserrat+Subrayada:400,700|Roboto:400,300,100,500,700,900);
 
+@import "colors";
+
 $brand: 'Montserrat Subrayada', sans-serif;
 $body: 'Roboto', sans-serif;
-
-$gray: #e2dbc8;
 
 body {
   background-color: #fbf4e1;
@@ -15,26 +15,29 @@ ul {
   list-style-type: none
 }
 
-#brand {
+/* heading */
+.brand {
   font-family: $brand;
   font-size: 3.5em;
   width: 5em;
 }
 
 .heading {
-  background-color:  #f3cc4b;
+  background-color:  $mustard;
 }
+
 
 .line {
   border-top: 1px solid $gray;
   height: 0.5em;
 }
 
-
+/* feature */
 .feature{
   width: 35em;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 4em;
 
   .front {
     width: 15em;
@@ -81,7 +84,17 @@ ul {
     border: 1px solid $gray;
 }
 
+/* navbar */
+.navbar {
+  background-color:  $gray;
+  ul {
+    margin: 0;
+    padding: 0;
+    li {
+      font-family: $brand;
+      margin: 0.5em 1em 0.5em 2em;
+    }
+  }
+}
 
-//yellow #f3cc4b
-//blue #506fa5
-//light gray #e2dbc8
+/* footer */

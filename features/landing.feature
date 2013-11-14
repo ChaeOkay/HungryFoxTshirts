@@ -11,5 +11,10 @@ Scenario: Visit home page
 Scenario: Visit about page
   Given I am at the landing page
   When I click on "About"
-  And I am redirected to the "about" page
+  And I am redirected to "about"
   Then I should see "Where did they come from?"
+
+Scenario: Show author
+  Given I am at the landing page
+  When I click on "Chae O'Keefe"
+  Then I am redirected to "chaeokeefe.com"

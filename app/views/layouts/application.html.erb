@@ -22,10 +22,11 @@
   </head>
 
   <body>
-    <%= render "/layouts/navbar" %>
+    <%= render "/layouts/brand" %>
     <%= render "/layouts/lines" %>
+    <%= render "/layouts/navbar" %>
     <%= yield %>
-
+    <%= render "/layouts/footer" %>
 
     <%= javascript_include_tag "application" %>
   </body>
