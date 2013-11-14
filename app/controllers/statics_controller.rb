@@ -3,5 +3,6 @@ class StaticsController < ApplicationController
   end
 
   def about
+    render "statics/about", layout: false
   end
 end

@@ -25,7 +25,8 @@
     <%= render "/layouts/brand" %>
     <%= render "/layouts/lines" %>
     <%= render "/layouts/navbar" %>
-    <%= yield %>
+    <div id="errors"></div>
+    <div id="maincontent"><%= yield %></div>
     <%= render "/layouts/footer" %>
 
     <%= javascript_include_tag "application" %>
