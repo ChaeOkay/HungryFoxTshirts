@@ -1,5 +1,4 @@
-# features/landing.feature
-Feature: Landing
+Feature: Shared
 In order to get information about wolf t shirts
 As a customer
 I want to access categories
