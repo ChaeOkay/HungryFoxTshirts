@@ -17,6 +17,7 @@ group :test, :development do
   gem 'database_cleaner'
   gem 'capybara'
   gem 'selenium-webdriver'
+  gem 'mongoid-rspec'
 end
 
 group :doc do

@@ -12,19 +12,21 @@ ActiveRecord::Migration.check_pending! if defined?(ActiveRecord::Migration)
 
 RSpec.configure do |config|
 
+  config.include Mongoid::Matchers, type: :model
   config.infer_base_class_for_anonymous_controllers = false
   config.order = "random"
 
-  config.before(:suite) do
-    DatabaseCleaner.strategy = :transaction
-    DatabaseCleaner.clean_with(:truncation)
+  config.before :suite do
+    DatabaseCleaner.strategy = :truncation
+    DatabaseCleaner.clean_with :truncation
   end
 
-  config.before(:each) do
+  config.before :each do
     DatabaseCleaner.start
   end
 
-  config.after(:each) do
+  config.after :each do
     DatabaseCleaner.clean
   end
+
 end
