@@ -5,7 +5,7 @@ class Tshirt
   field :description
   field :cost, type: Integer
 
-  has_many :tsizes
+  has_and_belongs_to_many :tsize
 
   validates_presence_of :name, :description, :cost
   validates_uniqueness_of :name

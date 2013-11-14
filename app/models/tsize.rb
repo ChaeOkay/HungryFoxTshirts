@@ -3,7 +3,7 @@ class Tsize
 
   field :name, type: String
 
-  belongs_to :tshirt
+  has_and_belongs_to_many :tshirt
 
   validates_presence_of :name
   validates_uniqueness_of :name
