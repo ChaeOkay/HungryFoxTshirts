@@ -1,4 +1,3 @@
-
 Given /^I am at the landing page$/ do
   visit root_path
 end
@@ -12,6 +11,7 @@ When /^I click on "(.*?)"$/ do |link|
   click_on link
 end
 
-When /^I am redirected to "(.*?)"$/ do |page|
-  pending
+Then /^I am redirected to "(.*?)"$/ do |url|
+  destination = current_path.to_s
+  destination.include? url
 end

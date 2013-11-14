@@ -6,13 +6,12 @@ I want to access categories
 
 Scenario: Visit home page
   Given I am at the landing page
-  Then I should see "wolf t-shirts"
+  Then I should see "Hungry Wolf T Shirts"
 
 Scenario: Visit about page
   Given I am at the landing page
   When I click on "About"
-  And I am redirected to "about"
-  Then I should see "Where did they come from?"
+  Then I should see "Rio, Come Undone"
 
 Scenario: Show author
   Given I am at the landing page
