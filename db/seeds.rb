@@ -3,4 +3,4 @@ tshirt = Tshirt.create(
                 description: 'muscle shirt, vintage 80s, cotton, white.',
                 cost: 20)
 
-tshirt.tsizes << Tsize.create(name: 'm')
+tshirt.tsize << Tsize.create(name: 'm')
