@@ -15,9 +15,10 @@
       <div class="tag">
         <div class="circleBase type1">
           <div class="text">
-            <h4>Duran Duran</h4>
-            <p>muscle shirt, vintage 80s, cotton, white.</p>
-            <p>sizes: m</p>
+            <h4><%= @tshirt_feature.name %></h4>
+            <p><%= @tshirt_feature.description %></p>
+            <p>sizes: <%= @sizes.join(", ") %></p>
+            <p>cost: <%= number_to_currency @tshirt_feature.cost %></p>
           </div>
         </div>
       </div>
