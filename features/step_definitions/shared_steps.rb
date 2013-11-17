@@ -1,4 +1,6 @@
 Given /^I am at the landing page$/ do
+  t = Tshirt.create(name: 'Number1', description: 'awesome', cost: 777)
+  t.tsize << Tsize.create(name: 'xxxxxl')
   visit root_path
 end
 
