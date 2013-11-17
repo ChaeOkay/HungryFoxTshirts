@@ -1,4 +1,4 @@
-#[HungryWolfTshirts](http://secure-peak-1796.herokuapp.com/)
+#[HungryWolfTshirts](http://hungrywolftshirts.com/)
 
 Selling vintage Duran Duran T-shirts!
 
