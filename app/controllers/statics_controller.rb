@@ -1,6 +1,6 @@
 class StaticsController < ApplicationController
   def landing
-    @tshirt_feature = Tshirt.find_by(name: 'Duran Duran - 00A')
+    @tshirt_feature = Tshirt.first
     @sizes = @tshirt_feature.tsize.pluck(:name)
   end
 
