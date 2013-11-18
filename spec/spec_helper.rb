@@ -17,8 +17,7 @@ RSpec.configure do |config|
   config.order = "random"
 
   config.before :suite do
-    DatabaseCleaner.strategy = :truncation
-    DatabaseCleaner.clean_with :truncation
+    DatabaseCleaner[:mongoid].strategy = :truncation
   end
 
   config.before :each do
