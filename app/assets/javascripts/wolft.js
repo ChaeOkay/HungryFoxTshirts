@@ -18,4 +18,5 @@ nav = new Navbar()
 
 $(document).ready(function(){
   nav.call('#about')
+  nav.call('#inventory')
 })
