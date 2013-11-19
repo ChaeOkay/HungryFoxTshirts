@@ -5,9 +5,8 @@ Given /^there are "(\d+)" t\-shirts in the database$/  do |number|
     t.tsize << Tsize.create(name: 'xxxxxl')
     n += 1
   end
-  binding.pry
 end
 
 Then /^I should see "(\d+)" t\-shirts$/ do |number|
-  page.should have_css(".tshirt", count: count.to_i)
+  page.should have_css(".tshirt", count: number.to_i)
 end

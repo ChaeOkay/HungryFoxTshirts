@@ -1,5 +1,9 @@
 <ul>
   <% @tshirts.each do |t| %>
-    <li><%= t.name %></li>
+    <li>
+      <div class="tshirt">
+        <%= t.name %>
+      </div>
+    </li>
   <% end %>
 </ul>
