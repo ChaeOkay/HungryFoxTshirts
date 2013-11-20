@@ -2,9 +2,9 @@
   .small-12.columns.small-centered.text-center.feature
     .small-8.columns
       .front
-        = image_tag @front
+        = image_tag @tshirt.front
       .back
-        = image_tag @back
+        = image_tag @tshirt.back
     .small-4.columns
       .tag
         .circleBase.type1
@@ -12,6 +12,6 @@
             %h4= @tshirt.name
             %p= @tshirt.description
             %p
-              sizes: #{@sizes.join(", ")}
+              sizes: #{@tshirt.sizes.join(", ")}
             %p
               cost: #{number_to_currency @tshirt.cost}
