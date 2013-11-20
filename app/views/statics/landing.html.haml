@@ -2,14 +2,14 @@
   .small-12.columns.small-centered.text-center.feature
     .small-8.columns
       .front
-        = image_tag @tshirt.front
+        = image_tag @tshirt.front || 'placeholder.png'
       .back
-        = image_tag @tshirt.back
+        = image_tag @tshirt.back || 'placeholder.png'
     .small-4.columns
       .tag
         .circleBase.type1
           .text
-            %h4= @tshirt.name
+            %b= @tshirt.name
             %p= @tshirt.description
             %p
               sizes: #{@tshirt.sizes.join(", ")}
