@@ -18,8 +18,7 @@ tshirt2 = Tshirt.create(
                 description: 'muscle shirt, double stich trim, single stich, vintage 80s, 50/50 poly/cotton, white.',
                 cost: 80)
 
-tshirt2.tsize << m
-tshirt2.tsize << l
+tshirt2.tsize << m << l
 
 
 tshirt3 = Tshirt.create(
