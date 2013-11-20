@@ -1,6 +1,7 @@
 class StaticsController < ApplicationController
+
   def landing
-    @tshirt = Tshirt.first
+    @tshirt = Tshirt.all.sample
   end
 
   def about
