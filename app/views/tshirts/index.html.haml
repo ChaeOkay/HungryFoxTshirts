@@ -1,5 +1,13 @@
-%ul
+%ul.allTs
   - @tshirts.each do |t|
     %li
-      .tshirt
-        = t.name
+      .row.tshirt
+        .container.small-12.columns.large-4
+          .container
+            = image_tag t.front || "placeholder.png"
+        .container.small-12.columns.large-8
+          %p.about.info
+            %b= t.name
+            %br= t.description
+            sizes: #{t.sizes.join(", ")}
+            %br $#{t.cost}
