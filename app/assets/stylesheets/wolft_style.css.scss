@@ -15,6 +15,17 @@ ul {
   list-style-type: none
 }
 
+.about {
+  font-size: 0.8em;
+  padding: 0 0 1.5em 0;
+}
+
+b {
+  color: $darkgray;
+  font-size: 1.5em;
+  padding: 0 0.5em 0 0;
+}
+
 /* heading */
 .brand {
   font-family: $brand;
@@ -42,17 +53,6 @@ ul {
     padding: 0;
   }
 
-  b {
-    color: $darkgray;
-    font-size: 1.5em;
-    padding: 0 0.5em 0 0;
-  }
-
-  .about {
-    font-size: 0.8em;
-    padding: 0 0 1.5em 0;
-  }
-
   .front {
     width: 15em;
     float: left;
@@ -76,7 +76,7 @@ ul {
   .text {
     font-weight: 100;
     font-size: 0.8em;
-    padding: 5em 2.5em 0em 2.5em
+    padding: 4em 2em 0em 2em
   }
 
 }
@@ -117,3 +117,16 @@ ul {
   color: $darkgray;
 }
 
+
+/* Tshirt Index */
+
+.tshirt {
+  padding: 3em 0 0 0;
+}
+
+.allTs {
+  margin: 1em;
+  .info {
+  padding: 2em 1em 0 1em;
+  }
+}
