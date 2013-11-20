@@ -1,0 +1,17 @@
+.row
+  .small-12.columns.small-centered.text-center.feature
+    .small-8.columns
+      .front
+        = image_tag "1_a.png"
+      .back
+        = image_tag "1_b.png"
+    .small-4.columns
+      .tag
+        .circleBase.type1
+          .text
+            %h4= @tshirt_feature.name
+            %p= @tshirt_feature.description
+            %p
+              sizes: #{@sizes.join(", ")}
+            %p
+              cost: #{number_to_currency @tshirt_feature.cost}

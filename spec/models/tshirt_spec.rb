@@ -7,6 +7,7 @@ describe Tshirt do
   it { should validate_presence_of :cost }
 
   it { should have_and_belong_to_many :tsize }
+  it { should have_many :pictures }
 
   context 'with valid parameters' do
     let(:tshirt) { Tshirt.create( name: '001',

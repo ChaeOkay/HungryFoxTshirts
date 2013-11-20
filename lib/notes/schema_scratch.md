@@ -2,6 +2,9 @@ User Stories
 - a user can read about the website
 - a user can see the tshirt on the root page
 
+a user can see full inventory
+- a user can see images of each tshirt
+
 a user can select a tshirt
 - a user can select a shirt size
 - a user can select a qty
@@ -27,12 +30,7 @@ a user can checkout
 __________________________________
 
 todo:
-1) set up temp root page
-  research - sass
-  research - cucumber
-
-research - mongodb
-reserach - do tshirts have tax?
+1) reserach - do tshirts have tax?
 research forms of payment - is paypal preferred?
 research - calculating sales tax
 
