@@ -20,7 +20,7 @@ class Tshirt
   end
 
   def back
-    picture.where(view: "front").pluck(:image_name).first
+    picture.where(view: "back").pluck(:image_name).first
   end
 
 end
