@@ -9,6 +9,8 @@ tshirt1 = Tshirt.create(
                 cost: 80)
 
 tshirt1.tsize << l
+tshirt1.picture << Picture.create(image_name: '00A1_a.png', view: 'front')
+tshirt1.picture << Picture.create(image_name: '00A1_b.png', view: 'back')
 
 
 tshirt2 = Tshirt.create(
