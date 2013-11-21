@@ -4,11 +4,14 @@ function Navbar() {
 
 Navbar.prototype = {
   call: function(id){
-    $(id).bind('ajax:success', function(e, data, xhr, settings){
-      e.preventDefault();
-      $('#maincontent').fadeOut(function(){
-        $('#maincontent').html(data)
-        $('#maincontent').fadeIn()
+    $(id).on('click', function(e){
+      e.preventDefault()
+
+      $(id).bind('ajax:success', function(e, data, xhr, settings){
+        $('#maincontent').fadeOut(function(){
+          $('#maincontent').html(data)
+          $('#maincontent').fadeIn()
+        })
       })
     })
   }
@@ -19,4 +22,5 @@ nav = new Navbar()
 $(document).ready(function(){
   nav.call('#about')
   nav.call('#inventory')
+  nav.call('#feature')
 })
