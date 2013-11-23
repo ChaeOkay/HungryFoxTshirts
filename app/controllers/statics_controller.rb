@@ -12,4 +12,8 @@ class StaticsController < ApplicationController
   def about
     render "statics/about", layout: false
   end
+
+  def basket
+    render "statics/basket", layout: false
+  end
 end

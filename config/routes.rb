@@ -4,4 +4,5 @@ WolfT::Application.routes.draw do
 
   get '/feature', to: 'statics#feature'
   get '/about', to: 'statics#about'
+  get '/basket', to: 'statics#basket'
 end
