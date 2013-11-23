@@ -2,6 +2,8 @@ require 'spec_helper'
 
 describe Picture do
   it { should validate_presence_of :view }
+  it { should validate_presence_of :image_name }
+  it { should validate_uniqueness_of :image_name }
   it { should belong_to :tshirt}
 
   context 'with vaid parameters' do
