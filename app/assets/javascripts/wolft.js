@@ -23,4 +23,5 @@ $(document).ready(function(){
   nav.call('#about')
   nav.call('#inventory')
   nav.call('#feature')
+  nav.call('#basket')
 })
