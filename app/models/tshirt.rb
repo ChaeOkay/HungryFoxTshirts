@@ -12,7 +12,7 @@ class Tshirt
   validates_uniqueness_of :name
 
   def sizes
-    inventory.map(&:tsize).map { |size| size.name }
+    inventory.map(&:tsize).map { |size| size.name.upcase }
   end
 
   def front
@@ -21,6 +21,10 @@ class Tshirt
 
   def back
     picture.where(view: "back").pluck(:image_name).first
+  end
+
+  def self.stock(tshirt, tsize)
+    Inventory.where(tshirt: tshirt, tsize: tsize).pluck(:qty).first
   end
 
 end

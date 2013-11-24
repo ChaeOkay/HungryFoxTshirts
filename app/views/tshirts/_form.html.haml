@@ -1,0 +1,8 @@
+%br Sizes:
+= form_tag('/add', method: :get, class: 'tform') do |f|
+  = hidden_field :tshirt, :name, :value => tshirt.name
+  = hidden_field :tshirt, :cost, :value => tshirt.cost
+  .tselect= select(:tshirt, "size", tshirt.sizes, { include_blank: true })
+
+  Select Quantity:
+  .tselect= select(:tshirt, "qty", '')
