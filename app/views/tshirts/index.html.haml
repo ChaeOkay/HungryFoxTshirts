@@ -11,3 +11,5 @@
             %br= t.description
             sizes: #{t.sizes.join(", ")}
             %br $#{t.cost}
+
+            = render partial: "form", locals: { tshirt: t }
