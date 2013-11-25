@@ -1,7 +1,7 @@
 Given /^I am at the landing page$/ do
   @t = Tshirt.create(name: 'Number1', description: 'awesome', cost: 777)
   tsize = Tsize.create(name: 'xxxxxl')
-  Inventory.create(tshirt: @t, tsize: tsize)
+  Inventory.create(tshirt: @t, tsize: tsize, qty: 2)
   visit root_path
 end
 

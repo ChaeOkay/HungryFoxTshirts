@@ -13,7 +13,7 @@ Scenario: Show Tshirt description
 
 Scenario: Show Tshirt size
   Given I am at the landing page
-  Then I should see "sizes: xxxxxl"
+  Then I should see "sizes: XXXXXL"
 
 Scenario: Show Tshirt cost
   Given I am at the landing page
