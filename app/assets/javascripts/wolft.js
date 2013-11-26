@@ -1,3 +1,10 @@
+function showPage(data) {
+  $('#maincontent').fadeOut(function(){
+    $('#maincontent').html(data)
+    $('#maincontent').fadeIn()
+  })
+}
+
 function Navbar() {
   this.content = $('#maincontent')
 }
@@ -8,10 +15,22 @@ Navbar.prototype = {
       e.preventDefault()
 
       $(id).bind('ajax:success', function(e, data, xhr, settings){
-        $('#maincontent').fadeOut(function(){
-          $('#maincontent').html(data)
-          $('#maincontent').fadeIn()
-        })
+        showPage(data)
+      })
+    })
+  },
+
+  submit: function(id){
+    $('#maincontent').on('submit', $(id), function(e){
+      e.preventDefault()
+
+      $.ajax({
+        type: 'post',
+        url: '/add'
+      }).done(function(data){
+        showPage(data)
+      }).fail(function(jqXHR, textStatus, errorThrown){
+        console.log(errorThrown)
       })
     })
   }
@@ -53,6 +72,7 @@ $(document).ready(function(){
   nav.call('#inventory')
   nav.call('#feature')
   nav.call('#basket')
+  nav.submit()
 
   tForm.updateQty()
 })

@@ -6,7 +6,8 @@ class TshirtsController < ApplicationController
   end
 
   def add
-    puts params
+    @tshirts = Tshirt.all
+    render "statics/basket", layout: false
   end
 
   def show_stock
