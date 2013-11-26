@@ -6,7 +6,7 @@ class TshirtsController < ApplicationController
   end
 
   def add
-    puts "add to basket"
+    puts params
   end
 
   def show_stock
