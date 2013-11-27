@@ -13,6 +13,7 @@ gem 'bson_ext'
 
 gem 'zurb-foundation'
 gem 'haml-rails'
+gem 'cartman'
 
 group :test, :development do
   gem 'rspec-rails'

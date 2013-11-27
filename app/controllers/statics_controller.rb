@@ -1,6 +1,8 @@
 class StaticsController < ApplicationController
+  extend BasketCreator
 
   def landing
+    session[:basket] = 1
     @tshirt = Tshirt.all.sample
   end
 
