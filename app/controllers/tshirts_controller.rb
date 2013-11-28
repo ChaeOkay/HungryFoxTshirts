@@ -7,12 +7,11 @@ class TshirtsController < ApplicationController
   end
 
   def add
-    data = { id: params[:tshirt][:name],
+    data = { id: "#{params[:tshirt][:name]} - #{params[:tshirt][:size]}",
              type: params[:tshirt].class,
              unit_cost: params[:tshirt][:cost],
              quantity: params[:tshirt][:qty] }
     basket.add_item(data)
-    @tshirts = Tshirt.all
     render "statics/basket", layout: false
   end
 
@@ -21,6 +20,11 @@ class TshirtsController < ApplicationController
     tsize = Tsize.where(name: params[:tshirt][:size].downcase).first
     @inventory_qty = Tshirt.stock tshirt, tsize
     render json: [*1..@inventory_qty]
+  end
+
+  def empty
+    clear_basket
+    render "statics/basket", layout: false
   end
 
 end

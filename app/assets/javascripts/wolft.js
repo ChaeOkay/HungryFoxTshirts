@@ -13,20 +13,20 @@ Navbar.prototype = {
   call: function(id){
     $(id).on('click', function(e){
       e.preventDefault()
-
       $(id).bind('ajax:success', function(e, data, xhr, settings){
         showPage(data)
       })
     })
   },
 
-  submit: function(id){
-    $('#maincontent').on('submit', $(id), function(e){
+  submit: function(){
+    $('#maincontent').on('submit', '#tform', function(e){
       e.preventDefault()
-
+      $data = $(this).closest('form').serialize()
       $.ajax({
         type: 'post',
-        url: '/add'
+        url: '/add',
+        data: $data
       }).done(function(data){
         showPage(data)
       }).fail(function(jqXHR, textStatus, errorThrown){
@@ -64,6 +64,21 @@ TForm.prototype = {
   }
 }
 
+function Basket(){
+}
+
+Basket.prototype = {
+  empty: function(){
+    $('#maincontent').on('click', '#ClearBasket', function(e){
+      e.preventDefault()
+      $.get( "/empty", function( data ) {
+        showPage(data)
+      });
+    })
+  }
+}
+
+basket = new Basket()
 tForm = new TForm()
 nav = new Navbar()
 
@@ -75,4 +90,6 @@ $(document).ready(function(){
   nav.submit()
 
   tForm.updateQty()
+
+  basket.empty()
 })

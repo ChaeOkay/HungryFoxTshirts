@@ -9,5 +9,6 @@ module BasketUsage
 
   def clear_basket
     session[:basket].destroy!
+    new_basket
   end
 end

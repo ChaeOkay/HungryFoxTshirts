@@ -1,1 +1,10 @@
-this is the basket
+- if basket.items.empty?
+  Basket is empty!
+- else
+  %ul
+    - basket.items.each do |item|
+      %li #{item.quantity} #{item.id} @ #{item.cost}
+    total: #{basket.total}
+  %button.btn#Checkout= 'checkout'
+  %br
+  %button.btn#ClearBasket= 'empty basket'
