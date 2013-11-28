@@ -1,4 +1,5 @@
 class TshirtsController < ApplicationController
+  include BasketUsage
 
   def index
     @tshirts = Tshirt.all
@@ -6,6 +7,11 @@ class TshirtsController < ApplicationController
   end
 
   def add
+    data = { id: params[:tshirt][:name],
+             type: params[:tshirt].class,
+             unit_cost: params[:tshirt][:cost],
+             quantity: params[:tshirt][:qty] }
+    basket.add_item(data)
     @tshirts = Tshirt.all
     render "statics/basket", layout: false
   end
