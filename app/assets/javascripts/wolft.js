@@ -22,7 +22,7 @@ Navbar.prototype = {
   submit: function(){
     $('#maincontent').on('submit', '#tform', function(e){
       e.preventDefault()
-      $data = $(this).closest('form').serialize()
+      var $data = $(this).closest('form').serialize()
       $.ajax({
         type: 'post',
         url: '/add',
@@ -43,8 +43,8 @@ TForm.prototype = {
   updateQty: function(){
     $('#maincontent').on('change', '#tshirt_size', function(e){
       e.preventDefault()
-      shirt = this
-      $data = $(this).closest('form').serialize()
+      var shirt = this
+      var $data = $(this).closest('form').serialize()
 
       $.ajax({
         type: 'get',
