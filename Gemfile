@@ -14,6 +14,7 @@ gem 'bson_ext'
 gem 'zurb-foundation'
 gem 'haml-rails'
 gem 'cartman'
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
 group :test, :development do
   gem 'rspec-rails'

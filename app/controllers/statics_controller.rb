@@ -18,12 +18,4 @@ class StaticsController < ApplicationController
   def basket
     render "statics/basket", layout: false
   end
-
-  def checkout
-    render "statics/checkout", layout: false
-  end
-
-  def checkoutform
-    render "statics/checkout", layout: false
-  end
 end
