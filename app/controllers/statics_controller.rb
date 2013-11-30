@@ -20,7 +20,6 @@ class StaticsController < ApplicationController
   end
 
   def checkoutform
-    #add basket data to metadta in charge
 
     begin
       charge = Stripe::Charge.create(
@@ -28,12 +27,13 @@ class StaticsController < ApplicationController
         :amount      => 500,
         :description => 'Hungry Wolft Tshirts',
         :currency    => 'usd'
+        #add basket data to metadata in charge
       )
-
     rescue Stripe::CardError => e
       flash[:error] = e.message
     end
-    redirect_to root_path
 
+    clear_basket
+    redirect_to root_path
   end
 end
