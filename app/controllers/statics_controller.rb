@@ -24,7 +24,7 @@ class StaticsController < ApplicationController
 
     begin
       charge = Stripe::Charge.create(
-        :card  => params[:stripeToken]
+        :card  => params[:stripeToken],
         :amount      => 500,
         :description => 'Hungry Wolft Tshirts',
         :currency    => 'usd'
@@ -32,7 +32,7 @@ class StaticsController < ApplicationController
 
     rescue Stripe::CardError => e
       flash[:error] = e.message
-
+    end
     redirect_to root_path
 
   end
