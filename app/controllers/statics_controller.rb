@@ -18,4 +18,22 @@ class StaticsController < ApplicationController
   def basket
     render "statics/basket", layout: false
   end
+
+  def checkoutform
+    #add basket data to metadta in charge
+
+    begin
+      charge = Stripe::Charge.create(
+        :card  => params[:stripeToken]
+        :amount      => 500,
+        :description => 'Hungry Wolft Tshirts',
+        :currency    => 'usd'
+      )
+
+    rescue Stripe::CardError => e
+      flash[:error] = e.message
+
+    redirect_to root_path
+
+  end
 end

@@ -4,7 +4,10 @@
   %ul
     - basket.items.each do |item|
       %li #{item.quantity} #{item.id} @ #{item.cost}
-    total: #{basket.total}
-  %button.btn#Checkout= 'checkout'
-  %br
+
+  = form_tag checkoutform_path do
+    %article
+      %label.amount
+        %span Amount: #{basket.total}
+    %script.stripe-button{"data-amount" => "#{basket.total * 100}", "data-description" => "Hungry Wolf Tshirts", "data-key" => Rails.configuration.stripe[:publishable_key], src: "https://checkout.stripe.com/checkout.js"}
   %button.btn#ClearBasket= 'empty basket'
