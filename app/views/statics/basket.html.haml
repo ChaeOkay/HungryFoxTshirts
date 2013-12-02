@@ -9,5 +9,5 @@
     %article
       %label.amount
         %span Amount: #{basket.total}
-    %script.stripe-button{"data-amount" => "#{basket.total * 100}", "data-description" => "Hungry Wolf Tshirts", "data-key" => Rails.configuration.stripe[:publishable_key], src: "https://checkout.stripe.com/checkout.js"}
+    %script.stripe-button{"data-amount" => "#{basket.total * 100}", "data-name" => "Hungry Wolf T-Shirts", "data-description" => "Test: 4242 4242 4242 4242", "data-key" => Rails.configuration.stripe[:publishable_key], src: "https://checkout.stripe.com/checkout.js"}
   %button.btn#ClearBasket= 'empty basket'
