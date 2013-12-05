@@ -3,7 +3,7 @@
 - else
   %ul
     - basket.items.each do |item|
-      %li #{item.quantity} #{item.id} @ #{item.cost}
+      %li #{item.quantity} #{item.id} @ #{item.unit_cost}
 
   = form_tag checkoutform_path do
     %article
