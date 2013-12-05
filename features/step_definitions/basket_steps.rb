@@ -12,9 +12,6 @@ When(/^I set the quantity to '(\d+)'$/) do |qty|
 end
 
 When(/^I add the tshirt to the basket$/) do
-  click_link 'Add to basket'
-end
-
-Then(/^the Basket should have '(\d+)' items$/) do |arg1|
-  pending
+  click_button 'Add to Basket'
+  sleep(5)
 end

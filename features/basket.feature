@@ -9,4 +9,4 @@ Scenario: Add Item to Basket
   And I set the size to "xxxxxl"
   And I set the quantity to '2'
   When I add the tshirt to the basket
-  Then the Basket should have '2' items
+  Then I should see "2 Number1 - XXXXXL @ 777"

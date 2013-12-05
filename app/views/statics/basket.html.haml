@@ -5,5 +5,5 @@
     - basket.items.each do |item|
       %li #{item.quantity} #{item.id} @ #{item.unit_cost}
 
-  = render partial: 'checkout'
+  = render partial: 'statics/checkout'
   %button.btn#ClearBasket= 'empty basket'
