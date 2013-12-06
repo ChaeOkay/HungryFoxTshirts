@@ -1,20 +1,47 @@
 class OrdersController < ApplicationController
   include BasketUsage
 
+  def billing
+  end
+
   def checkoutform
     begin
       charge = Stripe::Charge.create(
         :card  => params[:stripeToken],
-        :amount      => 500,
+        :amount      => basket.total.to_i * 100,
         :description => 'Hungry Wolft Tshirts',
         :currency    => 'usd'
-        #add basket data to metadata in charge
       )
     rescue Stripe::CardError => e
       flash[:error] = e.message
     end
 
-    clear_basket
+    log_receipt = Order.new(order_params)
+    log_receipt.basketTotal = basket.total.to_i * 100
+    log_receipt.basketItemQuantity = basket.quantity
+    log_receipt.basketDescription = "basket description"
+
+    clear_basket if log_receipt.save
+
     redirect_to root_path
+  end
+
+  private
+
+  def order_params
+    params.permit(:stripeToken,
+                  :stripeEmail,
+                  :stripeBillingName,
+                  :stripeBillingAddressLine1,
+                  :stripeBillingAddressZip,
+                  :stripeBillingAddressCity,
+                  :stripeBillingAddressState,
+                  :stripeBillingAddressCountry,
+                  :stripeShippingName,
+                  :stripeShippingAddressLine1,
+                  :stripeShippingAddressZip,
+                  :stripeShippingAddressCity,
+                  :stripeShippingAddressState,
+                  :stripeShippingAddressCountry)
   end
 end
