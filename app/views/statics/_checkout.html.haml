@@ -1,5 +1,5 @@
 = form_tag checkoutform_path do
   %article
     %label.amount
-      %span Amount: #{basket.total.to_i}
-  %script.stripe-button{"data-amount" => "#{basket.total.to_i * 100}", "data-name" => "Hungry Wolf T-Shirts", "data-description" => "Test: 4242 4242 4242 4242", "data-billing-address" => true, "data-shipping-address" => true, "data-key" => Rails.configuration.stripe[:publishable_key], src: "https://checkout.stripe.com/checkout.js"}
+      %span Amount: #{basket_amount}
+  %script.stripe-button{"data-amount" => "#{basket_in_cents}", "data-name" => "Hungry Wolf T-Shirts", "data-description" => "Test: 4242 4242 4242 4242", "data-billing-address" => true, "data-shipping-address" => true, "data-key" => Rails.configuration.stripe[:publishable_key], src: "https://checkout.stripe.com/checkout.js"}

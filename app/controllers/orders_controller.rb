@@ -8,7 +8,7 @@ class OrdersController < ApplicationController
     begin
       charge = Stripe::Charge.create(
         :card  => params[:stripeToken],
-        :amount      => basket.total.to_i * 100,
+        :amount      => basket_in_cents,
         :description => 'Hungry Wolft Tshirts',
         :currency    => 'usd'
       )
@@ -17,7 +17,7 @@ class OrdersController < ApplicationController
     end
 
     log_receipt = Order.new(order_params)
-    log_receipt.basketTotal = basket.total.to_i * 100
+    log_receipt.basketTotal = basket_in_cents
     log_receipt.basketItemQuantity = basket.quantity
     log_receipt.basketDescription = "basket description"
 
