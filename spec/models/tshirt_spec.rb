@@ -10,10 +10,8 @@ describe Tshirt do
   it { should have_many :picture }
 
   context 'with valid parameters' do
-    let(:tshirt) { Tshirt.create( name: '001',
-                                  description: 'hot',
-                                  cost: 10) }
-    let(:s) { Tsize.create( name: 's') }
+    let(:tshirt) { create :tshirt }
+    let(:s) { create :tsize }
     let(:m) { Tsize.create( name: 'm') }
 
     it 'can have multiple sizes' do

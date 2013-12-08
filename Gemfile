@@ -24,6 +24,7 @@ group :test, :development do
   gem 'capybara'
   gem 'selenium-webdriver'
   gem 'pry'
+  gem 'factory_girl_rails'
 end
 
 group :doc do
