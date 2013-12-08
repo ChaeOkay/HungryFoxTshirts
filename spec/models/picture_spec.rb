@@ -7,7 +7,7 @@ describe Picture do
   it { should belong_to :tshirt}
 
   context 'with vaid parameters' do
-    let(:picture) { Picture.create(view: 'front') }
+    let(:picture) { create :picture }
     it 'should have a default image_name of placeholder.png' do
       expect(picture.image_name).to eq 'placeholder.png'
     end
