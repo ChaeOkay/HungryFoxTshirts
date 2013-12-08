@@ -1,4 +1,4 @@
-  Feature: Shared
+Feature: Shared
 In order to buy a Tshirt
 As a customer
 I want to see Tshirt information
