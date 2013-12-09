@@ -20,6 +20,7 @@ class OrdersController < ApplicationController
     log_receipt.basketTotal = basket_in_cents
     log_receipt.basketItemQuantity = basket.quantity
     log_receipt.basketDescription = "basket description"
+    log_receipt.create_record_number
 
     clear_basket if log_receipt.save
 
