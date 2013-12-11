@@ -1,9 +1,6 @@
 class OrdersController < ApplicationController
   include BasketUsage
 
-  def billing
-  end
-
   def checkoutform
     begin
       charge = Stripe::Charge.create(
@@ -16,15 +13,19 @@ class OrdersController < ApplicationController
       flash[:error] = e.message
     end
 
-    log_receipt = Order.new(order_params)
-    log_receipt.basketTotal = basket_in_cents
-    log_receipt.basketItemQuantity = basket.quantity
-    log_receipt.basketDescription = "basket description"
-    log_receipt.create_record_number
+    @order = Order.new(order_params)
+    @order.basketTotal = basket_in_cents
+    @order.basketItemQuantity = basket.quantity
+    @order.basketDescription = "basket description"
+    @order.create_record_number
 
-    clear_basket if log_receipt.save
-
-    redirect_to root_path
+    if @order.save
+      clear_basket
+      render partial: "checkout", object: @order, layout: false
+    else
+      render "statics/basket"
+      #render errors
+    end
   end
 
   private
@@ -45,4 +46,5 @@ class OrdersController < ApplicationController
                   :stripeShippingAddressState,
                   :stripeShippingAddressCountry)
   end
+
 end
