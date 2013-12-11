@@ -13,10 +13,12 @@
     / <meta http-equiv="X-UA-Compatible" content="IE=7" />
     / Set the viewport width to device width for mobile
     %meta{content: "width=device-width, initial-scale=1.0", name: "viewport"}/
-    %title= content_for?(:title) ? yield(:title) : "Untitled"
+    %title= content_for?(:title) ? yield(:title) : "HungryWolfTShirts"
     = stylesheet_link_tag    "application"
     = javascript_include_tag "vendor/custom.modernizr"
     = csrf_meta_tags
+    = favicon_link_tag "assets/favicon.ico", :rel => "icon", :type => "image/x-icon"
+
   %body
     = render "/layouts/brand"
     = render "/layouts/lines"
