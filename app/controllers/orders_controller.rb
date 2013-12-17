@@ -3,6 +3,7 @@ class OrdersController < ApplicationController
 
   def checkoutform
     begin
+      new_basket
       charge = Stripe::Charge.create(
         :card  => params[:stripeToken],
         :amount      => basket_in_cents,
@@ -21,10 +22,11 @@ class OrdersController < ApplicationController
 
     if @order.save
       clear_basket
-      render partial: "checkout", object: @order, layout: false
+      #flash[:message] = "Order was placed! Confirmation: #{@order.record_number}"
+      #redirect_to root_path
+      render 'statics/basket', layout: false
     else
       render "statics/basket"
-      #render errors
     end
   end
 
