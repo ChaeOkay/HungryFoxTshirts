@@ -78,21 +78,9 @@ Basket.prototype = {
   }
 }
 
-// function Order(){
-// }
-
-// Order.prototype = {
-//   success: function(){
-//     $('#maincontent').on('click', '.stripe-button-el', function(e){
-//       e.preventDefault()
-//     })
-//   }
-// }
-
 basket = new Basket()
 tForm = new TForm()
 nav = new Navbar()
-// order = new Order()
 
 $(document).ready(function(){
   nav.call('#about')
@@ -103,6 +91,5 @@ $(document).ready(function(){
 
   tForm.updateQty()
   basket.empty()
-  // order.success()
 
 })
