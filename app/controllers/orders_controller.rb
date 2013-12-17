@@ -22,7 +22,7 @@ class OrdersController < ApplicationController
 
     if @order.save
       clear_basket
-      flash[:notice] = "Your confirmation number is #{@order.record_number}"
+      flash[:notice] = "Your order confirmation number is #{@order.record_number}"
       flash.keep(:notice)
       redirect_to root_path
     else

@@ -1,5 +1,5 @@
 - if flash[:notice]
-  %p Thank you for your order!
-  %br= flash[:notice]
+  %p Thank you!
+  = flash[:notice]
 
 = render partial: "frontpage", object: @tshirt
