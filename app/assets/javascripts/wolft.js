@@ -78,10 +78,6 @@ Basket.prototype = {
   }
 }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> no_ajax
 basket = new Basket()
 tForm = new TForm()
 nav = new Navbar()
@@ -95,17 +91,4 @@ $(document).ready(function(){
 
   tForm.updateQty()
   basket.empty()
-<<<<<<< HEAD
-
-  $('#maincontent').on('click', '.stripe-button-el', function(e){
-    e.preventDefault()
-    console.log('button clicked')
-    console.log($('#stripe_checkout_form'))
-    $.get('/basket', function(data){
-      console.log(data)
-    })
-  })
-=======
->>>>>>> no_ajax
-
 })
