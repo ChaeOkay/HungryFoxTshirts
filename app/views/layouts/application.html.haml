@@ -19,10 +19,11 @@
     = csrf_meta_tags
 
   %body
-    = render "/layouts/brand"
-    = render "/layouts/lines"
-    = render "/layouts/navbar"
-    #errors
-    #maincontent= yield
-    = render "/layouts/footer"
+    %header
+      = render "/layouts/brand"
+      %nav= render "/layouts/navbar"
+    %section#maincontent
+      = yield
+    %footer
+      = render "/layouts/footer"
     = javascript_include_tag "application"

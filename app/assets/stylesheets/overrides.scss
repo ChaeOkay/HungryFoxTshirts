@@ -1,0 +1,65 @@
+$body: 'Roboto', sans-serif;
+@import "colors", "fonts";
+
+body {
+  background-color: $ltyellow;
+  font-family: $body;
+  font-weight: 400;
+  color: black; }
+
+ul { list-style-type: none; }
+
+b {
+  color: $darkgray;
+  font-size: 1.5em;
+  padding: 0 0.5em 0 0; }
+
+a {
+  text-decoration: none;
+  color: black; }
+
+
+/* header */
+header {
+  font-family: $brand;
+  .brand_heading {
+    background-color: $mustard;
+    font-size: 3.5em;
+    .brand {
+      padding: 0.5em 0 0 0.5em; }
+  }
+  .line {
+  border-top: 1px solid $gray;
+  height: 0.5em; }
+}
+
+nav {
+  background-color:  $gray;
+  ul {
+    margin: 0;
+    padding: 0;
+    li {
+      display: inline-block;
+      margin: 0.5em 1em 0.5em 2em; }
+  }
+}
+
+/* section */
+section {
+  font-size: 0.8em;
+  padding: 0 0 1.5em 0; }
+
+/* footer */
+footer {
+  padding: 0.5em 0 0.5em 0;
+  height: 1em;
+  color: $darkgray;
+  font-size: 0.7em;
+  background: $gray;
+  .copyright {
+    float: left;
+    padding: 0 0 0 1em;}
+  .author {
+    float: right;
+    padding: 0 1em 0 0; }
+}

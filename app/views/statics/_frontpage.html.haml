@@ -1,17 +1,16 @@
-.row
-  .small-12.columns.small-centered.text-center.feature
-    .small-8.columns
-      .front
-        = image_tag @tshirt.front || 'placeholder.png'
-      .back
-        = image_tag @tshirt.back || 'placeholder.png'
-    .small-4.columns
-      .tag
-        .circleBase.type1
-          .text
-            %b= @tshirt.name
-            %p= @tshirt.description
-            %p
-              sizes: #{@tshirt.sizes.join(", ")}
-            %p
-              cost: #{number_to_currency @tshirt.cost}
+.tshirt_feature
+  .tshirt
+    .front
+      = image_tag @tshirt.front || 'placeholder.png'
+    .back
+      = image_tag @tshirt.back || 'placeholder.png'
+  .tshirt_info
+    .tag
+      .circleBase.type1
+        .text
+          %b= @tshirt.name
+          %p= @tshirt.description
+          %p
+            sizes: #{@tshirt.sizes.join(", ")}
+          %p
+            cost: #{number_to_currency @tshirt.cost}
