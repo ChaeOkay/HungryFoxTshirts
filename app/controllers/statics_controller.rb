@@ -3,20 +3,20 @@ class StaticsController < ApplicationController
 
   def landing
     new_basket
-    @tshirt = Tshirt.all.sample
+    @tshirts = Tshirt.all
   end
 
   def feature
-    @tshirt = Tshirt.all.sample
+    @tshirts = Tshirt.all
     render 'statics/feature', layout: false
   end
 
   def about
-    render "statics/about", layout: false
+    render 'statics/about', layout: false
   end
 
   def basket
-    render "statics/basket", layout: false
+    render 'statics/basket', layout: false
   end
 
 end
