@@ -18,23 +18,29 @@ a {
   text-decoration: none;
   color: black; }
 
+table {
+  border: 1px solid gray;
+}
+
 
 /* header */
 header {
   font-family: $brand;
   .brand_heading {
     background-color: $mustard;
-    font-size: 3.5em;
+    font-size: 3em;
+    padding: 0.5em 0 0 0;
     .brand {
-      padding: 0.5em 0 0 0.5em; }
+      padding: 0 0 0 0.5em; }
   }
   .line {
   border-top: 1px solid $gray;
-  height: 0.5em; }
+  height: 0.25em; }
 }
 
 nav {
   background-color:  $gray;
+  font-size: 0.5em;
   ul {
     margin: 0;
     padding: 0;
@@ -45,17 +51,16 @@ nav {
 }
 
 /* section */
-section {
-  font-size: 0.8em;
-  padding: 0 0 1.5em 0; }
+section { font-size: 0.8em; }
 
 /* footer */
 footer {
   padding: 0.5em 0 0.5em 0;
-  height: 1em;
+  height: 2em;
   color: $darkgray;
   font-size: 0.7em;
   background: $gray;
+  clear: both;
   .copyright {
     float: left;
     padding: 0 0 0 1em;}
@@ -63,3 +68,4 @@ footer {
     float: right;
     padding: 0 1em 0 0; }
 }
+

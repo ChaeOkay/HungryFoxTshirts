@@ -1,16 +1,21 @@
-.tshirt_feature
-  .tshirt
-    .front
-      = image_tag @tshirt.front || 'placeholder.png'
-    .back
-      = image_tag @tshirt.back || 'placeholder.png'
-  .tshirt_info
-    .tag
-      .circleBase.type1
-        .text
-          %b= @tshirt.name
-          %p= @tshirt.description
-          %p
-            sizes: #{@tshirt.sizes.join(", ")}
-          %p
-            cost: #{number_to_currency @tshirt.cost}
+%div.show-for-medium-up
+  %ul.example-orbit{"data-orbit" => "", "data-options" => "timer_speed:2500"}
+    - @tshirts.each do |tshirt|
+      %li.tshirt_feature
+        .tshirt_images
+          .front
+            = image_tag tshirt.front || 'placeholder.png'
+          .back
+            = image_tag tshirt.back || 'placeholder.png'
+        .tshirt_info
+          .circleBase
+            .text
+              %b= tshirt.name
+              %p= tshirt.description
+              %p
+                sizes: #{tshirt.sizes.join(", ")}
+              %p
+                cost: #{number_to_currency tshirt.cost}
+
+%div.show-for-small
+  = render 'tshirts/allshirts'

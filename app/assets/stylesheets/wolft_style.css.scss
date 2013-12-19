@@ -1,67 +1,57 @@
 @import "colors", "overrides", "fonts";
 
+.orbit-slides-container {
+  padding: 2em 0 0 10em; }
 
-/* feature */
-.feature{
-  width: 35em;
-  margin-top: 4em;
+.orbit-container {
+  width: 60em;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2em 0 0 10em;}
 
-  .front {
-    width: 15em;
+.tshirt_feature {
+  height: 35em;
+  img { max-width: 100% }
+  .tshirt_images {
+    .front {
+      float: left;
+      img {
+        width: 20em;
+        }}
+    .back {
+      width: 4em;
+      float: left; }}
+  .tshirt_info {
     float: left;
-  }
-
-  .back {
-    width: 5em;
-    margin: 1em 0 0 0;
-    float: left;
-  }
-
-  .tag {
-    width: 12em;
-    float: right;
-    margin: 5em 0 0 0;
-    padding-left: 3em;
-    top: 50%;
-    bottom: 50%;
-  }
-
-  .text {
-    font-weight: 100;
-    font-size: 0.8em;
-    padding: 4em 2em 0em 2em
-  }
-
-}
-
-.circleBase {
-    -webkit-border-radius: 999px;
-    -moz-border-radius: 999px;
-    border-radius: 999px;
-}
-
-.type1 {
     width: 15em;
     height: 15em;
-    border: 1px solid $gray;
+    font-weight: 100;
+    font-size: 0.8em;
+    text-align: center;
+    padding: 5em 0 5em 0;
+    .circleBase {
+      -webkit-border-radius: 999px;
+      -moz-border-radius: 999px;
+      border-radius: 999px;
+      width: 20em;
+      height: 20em;
+      border: 1px solid $gray;}
+    .text { padding: 5em 0 0 0; }}
 }
-
 
 /* Tshirt Index */
 
 .tshirt {
-  padding: 3em 0 0 0;
-}
+  padding: 3em 0 0 0; }
 
 .allTs {
   margin: 1em;
   .info {
-  padding: 2em 1em 0 1em;
-  }
-}
+  padding: 2em 1em 0 1em; }}
 
 .tselect {
   width: 5em;
+  display: inline-block;
 }
 
 .AddToBasket, #ClearBasket {
