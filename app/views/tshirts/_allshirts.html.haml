@@ -1,0 +1,17 @@
+%ul.allTs
+  - @tshirts.each do |t|
+    %li
+      .row.tshirt
+        .container.small-12.columns.large-4
+          .container
+            = image_tag t.front || "placeholder.png"
+
+        .container.small-12.columns.large-8.show-for-medium-up
+          .about.info
+            %b= t.name
+            %br= t.description
+            \ $#{t.cost}
+            = render partial: "tshirts/form", locals: { tshirt: t }
+
+        .container.small-12.columns.show-for-small
+          'hi'
