@@ -4,7 +4,7 @@
   padding: 2em 0 0 10em; }
 
 .orbit-container {
-  width: 60em;
+  width: 56em;
   margin-left: auto;
   margin-right: auto;
   padding: 2em 0 0 10em;}
@@ -40,22 +40,61 @@
     .text { padding: 5em 0 0 0; }}
 }
 
+
 /* Tshirt Index */
 
-.tshirt {
-  padding: 3em 0 0 0; }
-
-.allTs {
-  margin: 1em;
-  .info {
-  padding: 2em 1em 0 1em; }}
-
-.tselect {
-  width: 5em;
-  display: inline-block;
+.tshirt_form {
+  padding: 1em 0 0 0;
+  .sizes {
+    float: left;
+    width: 6em; }
+  .tshirt {
+    padding: 3em 0 0 0; }
+  .tselect {
+    width: 5em;
+    display: inline-block; }
+  .selectors {
+    width: 12em;
+    float: left; }
+  .AddToBasket, #ClearBasket {
+    border-radius: .5em;
+    border: 1px solid gray }
+  .basketbutton {
+    padding: 1.3em 0 0 0;
+  }
 }
 
-.AddToBasket, #ClearBasket {
-  background-color:$darkgray;
-  border-radius: .5em;
+.tshirt {
+  margin: 1em;
+  padding: 1em;
+  background: $beige;
+ .info {
+  margin: 1em;
+  padding: 2em 1em 0 1em;
+  border: 1px solid gray; }
+}
+
+.allTs {
+  .tshirt {
+    margin: 1em;
+    padding: 1em;
+    background: $beige;
+   .info {
+    margin: 1em;
+    padding: 2em 1em 0 1em;
+    border: 1px dotted gray; }
+  }
+}
+
+.allTs-small {
+  .tshirt {
+    margin: 1em;
+    padding: 1em;
+    background: none;
+   .info {
+    margin: 1em;
+    padding: 2em 1em 0 1em;
+    border: 1px solid gray;
+    background-color: $beige }
+  }
 }
