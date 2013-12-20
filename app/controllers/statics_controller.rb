@@ -8,7 +8,7 @@ class StaticsController < ApplicationController
 
   def feature
     @tshirts = Tshirt.all
-    render 'statics/feature', layout: false
+    render 'statics/landing', layout: false
   end
 
   def about
