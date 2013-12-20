@@ -41,7 +41,11 @@
       height: 20em;
       border: 1px solid $gray;
       background-color: $tealblue;}
-    .text { padding: 5em 0 0 0; }}
+    .text {
+      padding: 5em 1em 0 1em;
+      b { color: #3C3216 }
+    }
+  }
 }
 
 
