@@ -5,9 +5,13 @@
 
 .orbit-container {
   width: 56em;
+  height: 44em;
   margin-left: auto;
   margin-right: auto;
-  padding: 6em 0 0 8em;}
+  padding: 6em 0 0 8em;
+  .orbit-bullets {
+    display: none; }
+}
 
 .tshirt_feature {
   height: 35em;
