@@ -1,5 +1,6 @@
 @import "colors", "overrides", "fonts";
 
+/* feature */
 .orbit-slides-container {
   padding: 2em 0 0 10em; }
 
@@ -45,6 +46,29 @@
       padding: 5em 1em 0 1em;
       b { color: #3C3216 }
     }
+  }
+}
+
+#band-images {
+  overflow: hidden;
+  height: 30em;
+  img {
+    width: 100%;
+    z-index: 0;
+    opacity: 0.6; }
+}
+
+.box {
+  width: 80%;
+  height: 2em;
+  opacity: 0.8;
+  position: absolute;
+  bottom: 12em;
+  p {
+    font-family: $brand;
+    font-size: 3.5em;
+    background-color: $mustard;
+    padding: 0 0 0 1em;
   }
 }
 
@@ -107,7 +131,7 @@
 
 
 /* about */
-
 .about {
   padding: 5em 0 10em 0;
 }
+

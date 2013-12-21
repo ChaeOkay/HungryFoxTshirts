@@ -16,6 +16,7 @@
                 sizes: #{tshirt.sizes.join(", ")}
               %p
                 cost: #{number_to_currency tshirt.cost}
+  = render 'statics/duranimages'
 
 %div.show-for-small
   = render 'tshirts/allshirts'
