@@ -1,4 +1,6 @@
 %div#feature-tshirt.show-for-medium-up
+  = render 'statics/duranimages'
+
   %ul.example-orbit{"data-orbit" => "", "data-options" => "timer_speed:2500"}
     - @tshirts.each do |tshirt|
       %li.tshirt_feature
@@ -16,7 +18,6 @@
                 sizes: #{tshirt.sizes.join(", ")}
               %p
                 cost: #{number_to_currency tshirt.cost}
-  = render 'statics/duranimages'
 
 %div.show-for-small
   = render 'tshirts/allshirts'

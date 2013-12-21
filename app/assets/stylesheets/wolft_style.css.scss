@@ -6,10 +6,10 @@
 
 .orbit-container {
   width: 56em;
-  height: 44em;
+  height: 33em;
   margin-left: auto;
   margin-right: auto;
-  padding: 6em 0 0 8em;
+  padding: 2em 0 0 8em;
   .orbit-bullets {
     display: none; }
 }
@@ -51,22 +51,23 @@
 
 #band-images {
   overflow: hidden;
-  height: 30em;
+  height: 22em;
   img {
     width: 100%;
     z-index: 0;
-    opacity: 0.6; }
+    opacity: 0.55; }
 }
 
 .box {
-  width: 80%;
+  width: 50%;
   height: 2em;
   opacity: 0.8;
   position: absolute;
-  bottom: 12em;
+  top: 25em;
   p {
     font-family: $brand;
-    font-size: 3.5em;
+    color: #666666;
+    font-size: 3em;
     background-color: $mustard;
     padding: 0 0 0 1em;
   }
