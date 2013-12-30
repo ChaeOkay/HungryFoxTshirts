@@ -1,3 +1,8 @@
+function showModal(data){
+  $('#myModal').html(data)
+  $('#myModal').foundation('reveal', 'open')
+}
+
 function showPage(selector, data, foundationBind) {
   $(selector).fadeOut(function(){
     $(selector).html(data)
@@ -24,6 +29,13 @@ Navbar.prototype = {
         showPage(that, data, foundationBind)
       })
     })
+  },
+  openModal: function(){
+    var id = this.id
+    $(id).bind('ajax:success', function(e, data){
+      e.preventDefault();
+      showModal(data)
+    })
   }
 }
 
@@ -42,7 +54,7 @@ Inventory.prototype = {
         url: '/add',
         data: $data
       }).done(function(data){
-        showPage(content, data)
+        showModal(data)
       }).fail(function(jqXHR, textStatus, errorThrown){
         console.log(errorThrown)
       })
@@ -97,7 +109,7 @@ var initialize = function(){
   aboutLink.call()
 
   basketLink = new Navbar('#basket')
-  basketLink.call()
+  basketLink.openModal()
 
   featureLink = new Navbar('#feature')
   featureLink.call('#feature-tshirt')
