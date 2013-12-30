@@ -14,6 +14,16 @@ function showPage(selector, data, foundationBind) {
   })
 }
 
+function clearBasket(){
+  $('#ClearBasket').on('click', function(e){
+    e.preventDefault()
+    console.log('clear basket clicked')
+    $.get( "/empty", function( data ) {
+      showModal(data)
+    });
+  })
+}
+
 function Navbar(id) {
   this.content = $('#maincontent')
   this.id = id
@@ -33,8 +43,9 @@ Navbar.prototype = {
   openModal: function(){
     var id = this.id
     $(id).bind('ajax:success', function(e, data){
-      e.preventDefault();
+      e.preventDefault()
       showModal(data)
+      clearBasket()
     })
   }
 }
@@ -79,24 +90,10 @@ Inventory.prototype = {
         $.each(data, function(){
           qty.append($("<option />").val(this).text(this))
         })
+
       }).fail(function(jqXHR, textStatus, errorThrown){
         console.log(errorThrown)
       })
-    })
-  }
-}
-
-function Basket(){
-}
-
-Basket.prototype = {
-  empty: function(){
-    var content = $('#maincontent')
-    $(content).on('click', '#ClearBasket', function(e){
-      e.preventDefault()
-      $.get( "/empty", function( data ) {
-        showPage(content, data)
-      });
     })
   }
 }
@@ -117,9 +114,6 @@ var initialize = function(){
   inventory = new Inventory()
   inventory.submit()
   inventory.updateQty()
-
-  basket = new Basket()
-  basket.empty()
 }
 
 $(document).ready(initialize)
