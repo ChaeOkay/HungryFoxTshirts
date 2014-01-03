@@ -19,3 +19,6 @@
 .DS_Store
 
 variables.yml
+host.csr
+host.key
+/ssl-cert
