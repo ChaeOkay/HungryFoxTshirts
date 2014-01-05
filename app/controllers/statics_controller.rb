@@ -1,7 +1,9 @@
 class StaticsController < ApplicationController
   include BasketUsage
+  include Sslredirect
 
   def landing
+    enforce_ssl
     new_basket
     @tshirts = Tshirt.all
   end
