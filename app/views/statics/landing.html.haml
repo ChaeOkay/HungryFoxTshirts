@@ -1,6 +1,7 @@
 - if flash[:notice]
-  %p Thank you!
-  = flash[:notice]
+  %div#flashNotice{:style=>"display:none"}
+    %p Thank you!
+    = flash[:notice]
 
 %div
   = render partial: "frontpage"

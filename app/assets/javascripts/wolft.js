@@ -58,8 +58,8 @@ Inventory.prototype = {
     var content = $('#maincontent')
     $(content).on('submit', '#tform', function(e){
       e.preventDefault()
-      console.log('in the submit function!')
       var $data = $(this).closest('form').serialize()
+
       $.ajax({
         type: 'post',
         url: '/add',
@@ -98,6 +98,19 @@ Inventory.prototype = {
   }
 }
 
+function ModalTrigger(){
+}
+
+ModalTrigger.prototype = {
+  listen: function(id){
+    var domElement = $(id)
+    if ($(domElement).html() != undefined) {
+      $(id).show()
+      showModal(domElement)
+    }
+  }
+}
+
 var initialize = function(){
   inventoryLink = new Navbar('#inventory')
   inventoryLink.call()
@@ -114,6 +127,9 @@ var initialize = function(){
   inventory = new Inventory()
   inventory.submit()
   inventory.updateQty()
+
+  orderConfirmation = new ModalTrigger()
+  orderConfirmation.listen('#flashNotice')
 }
 
 $(document).ready(initialize)
