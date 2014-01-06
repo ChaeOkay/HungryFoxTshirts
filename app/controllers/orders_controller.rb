@@ -1,29 +1,12 @@
 class OrdersController < ApplicationController
-  include BasketUsage
+  include OrderProcessor
 
   def checkoutform
-    begin
-      new_basket
-      charge = Stripe::Charge.create(
-        :card  => params[:stripeToken],
-        :amount      => basket_in_cents,
-        :description => 'Hungry Wolft Tshirts',
-        :currency    => 'usd'
-      )
-    rescue Stripe::CardError => e
-      flash[:error] = e.message
-    end
-
-    @order = Order.new(order_params)
-    @order.basketTotal = basket_in_cents
-    @order.basketItemQuantity = basket.quantity
-    @order.basketDescription = "basket description"
-    @order.create_record_number
+    make_stripe_charge
+    @order = log_order
 
     if @order.save
-      clear_basket
-      flash[:notice] = "Your order confirmation number is #{@order.record_number}"
-      flash.keep(:notice)
+      generate_notice
       redirect_to root_path
     else
       render "statics/basket"
