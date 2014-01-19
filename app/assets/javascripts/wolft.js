@@ -1,6 +1,7 @@
 function showModal(data){
   $('#myModal').html(data)
   $('#myModal').foundation('reveal', 'open')
+  clearBasket()
 }
 
 function showPage(selector, data, foundationBind) {
@@ -45,7 +46,6 @@ Navbar.prototype = {
     $(id).bind('ajax:success', function(e, data){
       e.preventDefault()
       showModal(data)
-      clearBasket()
     })
   }
 }
@@ -112,17 +112,13 @@ ModalTrigger.prototype = {
 }
 
 var initialize = function(){
-  inventoryLink = new Navbar('#inventory')
-  inventoryLink.call()
+  inventoryLink = new Navbar('#inventory').call()
 
-  aboutLink = new Navbar('#about')
-  aboutLink.call()
+  aboutLink = new Navbar('#about').call()
 
-  basketLink = new Navbar('#basket')
-  basketLink.openModal()
+  basketLink = new Navbar('#basket').openModal()
 
-  featureLink = new Navbar('#feature')
-  featureLink.call('#feature-tshirt')
+  featureLink = new Navbar('#feature').call('#feature-tshirt')
 
   inventory = new Inventory()
   inventory.submit()
