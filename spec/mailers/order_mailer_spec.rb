@@ -5,10 +5,7 @@ describe OrderMailer do
   let!(:mail)   { OrderMailer.confirmation_email(
                             record_number: order.record_number,
                             email: order.stripeEmail,
-                            name: order.stripeBillingName,
-                            order_total: order.basketTotal,
-                            order_description: order.basketDescription,
-                            order_qty: order.basketItemQuantity, )}
+                            name: order.stripeBillingName)}
 
   it "is addressed to the order email address" do
     mail.to.should == [order.stripeEmail]
@@ -20,17 +17,5 @@ describe OrderMailer do
 
   it "displays the billing name" do
     mail.body.encoded.should match(order.stripeBillingName)
-  end
-
-  it "displays the basket total" do
-    mail.body.encoded.should match(order.basketTotal)
-  end
-
-  it "displays the basket item quantity" do
-    mail.body.encoded.should match(order.basketItemQuantity)
-  end
-
-  it "displays the basket item quantity" do
-    mail.body.encoded.should match(order.basketDescription)
   end
 end
