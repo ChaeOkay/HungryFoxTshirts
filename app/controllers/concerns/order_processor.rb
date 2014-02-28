@@ -25,8 +25,18 @@ module OrderProcessor
     order
   end
 
-  def generate_notice
+  def generate_notice(order)
     clear_basket
+
+    OrderMailer.confirmation_email(
+                  email: @order.stripeEmail,
+                  record_number: @order.record_number,
+                  name: order.stripeBillingName,
+                  order_total: order.basketTotal,
+                  order_description: order.basketDescription,
+                  order_qty: order.basketItemQuantity
+                ).deliver
+
     flash[:notice] = "Your order confirmation number is #{@order.record_number}"
     flash.keep(:notice)
   end

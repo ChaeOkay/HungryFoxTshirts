@@ -6,7 +6,7 @@ class OrdersController < ApplicationController
     @order = log_order
 
     if @order.save
-      generate_notice
+      generate_notice(@order)
       redirect_to root_path
     else
       render "statics/basket"

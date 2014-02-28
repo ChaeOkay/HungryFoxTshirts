@@ -1,0 +1,21 @@
+!!!
+%html
+  %head
+    %meta{content: "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+  %body
+    %h1
+      = link_to "Hungry Wolf Tshirts", @url
+    %h2
+      Order Confirmation
+    %p
+      Thank you #{@name}, your confirmation number is #{@confirmation}
+      %table
+        %tr
+          %th Order Quantity
+          %th Order Description
+          %th Total
+        %tr
+          %td= @order_qty
+          %td= @order_description
+          %td= @order_total
+
