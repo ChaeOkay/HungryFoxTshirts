@@ -21,4 +21,5 @@
 variables.yml
 host.csr
 host.key
+public.pem
 /ssl-cert
